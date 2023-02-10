@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum</title>
+    <style>
+        body {
+            margin: 0%;
+            border: 0%;
+            overflow-x: hidden;
+        }
+    
+        .loremlogo{
+            width: 140px;
+        }
+    
+        .nav-home, .nav-explore, .nav-travel {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        border-bottom: none;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        cursor: pointer;
+        background: none;
+        border-left: solid 1px rgb(206, 202, 202) ;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .nav-home a, .nav-explore a, .nav-travel a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .nav-home {
+        border-bottom: 5px solid red;
+    }
+
+    .loremlogo, .nav-home, .nav-explore, .nav-travel {
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;
+        float: left;
+    }
+    
+        .headerpic {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            z-index: 1;
+        }
+    
+        .drpImg {
+            width: 110px;
+            height: 110px;
+            border-image: round;
+            border-radius: 90px 90px;
+            background-color: rgb(172, 0, 0);
+            transition: width 1s, height 1s;
+            transition-timing-function: ease;
+            border: solid 4px rgb(172, 0, 0);
+        }
+    
+        .drpImg:hover {
+            width: 100px;
+            height: 100px;
+            background-color:white;
+        }
+    
+        .explore-content {
+            display: inline-block;
+            justify-content: space-around;
+            align-items: center;
+        }
+    
+        .dropdwn {
+            background-color: white;
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin-top: 65px;
+            opacity: 0;
+            transition: height 2s ease;
+            z-index: 3;
+        }
+    
+        .explore-content button:focus + .dropdwn {
+            height: auto;
+            opacity: 1;
+        }
+    
+        .drp {
+            display: inline-block;
+            padding: 20px 20px;
+            text-align: center;
+            margin-left: 100px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .drp a {
+            color: black;
+            text-decoration: none;
+        }
+    
+        nav {
+            border-bottom: solid 1px rgb(206, 202, 202) ;
+        }
+
+        .header-luzon {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            filter: brightness(70%);
+        }
+
+        .luzon-head h1{
+            position: absolute;
+            font-size: 100px;
+            top: 70px;
+            color: white;
+            margin-left: 60px;
+        }
+
+        .luzon-head small {
+            font-size: 50px;
+        }
+
+        .luzons-pic {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            position: absolute;
+            top: 10;
+            right: 0;
+        }
+
+        .story-view {
+            background-color: rgb(236, 218, 57);
+            width: 1300px;
+            height: 560px;
+            margin: auto;
+            border-radius: 20px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .story-view h1{
+            margin-left: 20px;
+            padding-top: 20px;
+        }
+
+        .view {
+            background-color: white;
+            width: 400px;
+            height: 400px;
+            margin-left: 23px;
+            border-radius: 20px 20px;
+            padding-bottom: 20px;
+        }
+
+        .bg-view {
+            width: 1300px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 0px 0px 20px 20px;
+        }
+
+        .mnl-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover; 
+            filter: brightness(60%);
+            margin-top: 30px;
+        }
+
+        .Manila h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200px;
+            position: absolute;
+            top: 1400px;
+            left: 480px;
+            color: white;
+        }
+
+        .intramuros .intra1 {
+            margin-left: 60px;
+            width: 700px;
+            height: 700px;
+            object-fit: cover;
+            border-radius: 20px 20px;
+        }
+
+        .intramuros .intra2 {
+            width: 890px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px 20px;
+        }
+
+        .intra3 {
+            width: 1600px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px 20px;
+            margin-left: 60px;
+        }
+
+        .intra4 {
+            width: 1600px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px 20px;
+            margin-left: 60px;
+        }
+
+        .intra5 {
+            width: 1600px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px 20px;
+            margin-left: 60px;
+        }
+
+        .intra6 {
+            width: 1600px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px 20px;
+            margin-left: 60px;
+        }
+
+        .intra-title {
+            width: 890px;
+            background-color: rgb(24, 24, 153);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            color: white;
+            border-radius: 20px 20px;
+            text-align: justify;
+            position: absolute;
+            top: 1909px;
+            right: 30px;
+        }
+
+        .intra-title p {
+            padding: 20px;
+        }
+
+
+        .intra-title h1 {
+            font-size: 60px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .ilocos h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200px;
+            position: absolute;
+            top: 4050px;
+            left: 350px;
+            color: white;            
+        }
+
+        .ilocos-title {
+            width: 890px;
+            background-color: rgb(49, 156, 27);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            color: white;
+            border-radius: 20px 20px;
+            text-align: justify;
+            position: absolute;
+            top: 4564px;
+            right: 34px;            
+        }
+
+        .ilocos-title p{
+            padding: 20px;
+            padding-bottom: 0px;
+            padding-top: 18px;
+        }
+
+        .ilocos-title h1 {
+            font-size: 60px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .ilocos .intra3 {
+            object-position: 0 70%;
+        }
+
+        .pgsn-title {
+            width: 890px;
+            background-color: rgb(211, 214, 46);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            color: white;
+            border-radius: 20px 20px;
+            text-align: justify;
+            position: absolute;
+            top: 7221px;
+            right: 30px;             
+        }
+
+        .pangasinan h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 150px;
+            position: absolute;
+            top: 6770px;
+            left: 390px;
+            color: white;                 
+        }
+
+        .pgsn-title p {
+            padding: 20px; 
+            padding-top: 0px;
+        }
+
+        .pgsn-title h1{
+            font-size: 60px;
+            padding: 20px;
+            text-align: center; 
+            padding-bottom: 18px;           
+        }
+
+        .exploring-luzon {
+            margin-left: 190px;
+            margin-top: 20px;
+        }
+
+        .exploring-luzon img{
+            width: 410px;
+            height: 180px;
+            border-radius: 20px 20px;
+        }
+
+        .exploring-luzon button {
+            width: 410px;
+            height: 180px;
+            border-radius: 20px 20px;
+            border:  none;
+            font-size: 30px;
+            position: absolute;
+            filter: opacity(50%);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:link, a:visited {
+            color: black;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        .exploring-luzon button:hover, .exploring-luzon h1:hover {
+            color:  white;
+            background-color: black;
+        }
+
+        .e-pangasinan, .e-manila, .e-ilocos {
+            display: inline-block;
+        }
+
+        .e-ilocos, .e-pangasinan {
+            margin-left: 30px;
+        }
+
+        li {
+        list-style-type: none;
+        display: inline-block;
+         }
+</style>
+</head>
+<body>
+    <body> 
+        <nav>
+            <img class="loremlogo" src="image/logo.png">
+            <button class="nav-home"><a href="index.html">Home</a></button>
+            <div class="explore-content">
+                <button class="nav-explore">Explore</button>
+                <ul class="dropdwn">
+                    <li><a class="drp" href="luzon.html"><img class="drpImg"  src="image/Luzon.png"><br>LUZON</a></li>
+                    <li><a class="drp" href="Visayas.html"><img class="drpImg" src="image/Visayas.png"><br>VISAYAS</a></li>
+                    <li><a class="drp" href="Mindanao.html"><img class="drpImg" src="image/Mindanao.png"><br>MINDANAO</a></li>
+                </ul>
+            </div>
+            <button class="nav-travel"><a href="travel.html">Travel</a></button>
+        </nav>
+    <div class="luzon-head">
+        <img class="header-luzon" src="https://www.zenrooms.com/blog/wp-content/uploads/2021/01/kawasan-falls-cebu-visayas-tourist-spots.jpg">
+        <h1><br><small>Experience the islands in Visayas now.</small></h1>
+        <img class="luzons-pic" src="image/header-visayas.png" alt="">
+    </div>
+
+    <div class="exploring-luzon">
+        <div class="e-manila">
+            <button><a href="#mnl"><h1>CEBU</h1></a></button>
+            <img src="https://d1k571r5p7i4n1.cloudfront.net/911b57c3777441402b665e684246ef31/large/Cebu_Tourist_Attractions.jpg">
+        </div>
+
+        <div class="e-ilocos">
+            <button><a href="#ilr"><h1>BOHOL</h1></a></button>
+            <img src="https://www.cruisemapper.com/images/ports/480-e8324d98230d.jpg">
+        </div>
+
+        <div class="e-pangasinan">
+            <button><a href="#pan"><h1>ILOILO</h1></a></button>
+            <img src="https://wallpaperaccess.com/full/1740357.jpg" alt="">
+        </div>
+    </div>
+    <div class="story-view">
+        <h1>Experience the 360° View</h1>
+        <iframe class="view" src="https://www.google.com/maps/embed?pb=!4v1639227012764!6m8!1m7!1sCAoSLEFGMVFpcE92ZWM5dGt5MWplWEx5M21iLVM5dXVDZEpwZEc2Wi1lZlUtakVJ!2m2!1d11.967427!2d121.9199233!3f228.6631146575952!4f25.722380371717406!5f0.7820865974627469" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="view" src="https://www.google.com/maps/embed?pb=!4v1639227179006!6m8!1m7!1sCAoSLEFGMVFpcE5xRThlRzZaU1RZN29FSnFoY1JhTkVVTFpITmdCYXZvRXFvWFhW!2m2!1d10.2926331!2d123.9058685!3f187.22958946352873!4f-14.437987680325634!5f0.7820865974627469" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="view" src="https://www.google.com/maps/embed?pb=!4v1639227264142!6m8!1m7!1sCAoSLEFGMVFpcE5fal9RRG5fYVZvRkNQNmRmS3pDZlA5X09LeXFmbjZ2a05aazBN!2m2!1d9.829708!2d124.1396756!3f156.61559968103163!4f-5.545670760181693!5f0.7820865974627469" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <img class="bg-view" src="https://img1.goodfon.com/wallpaper/big/b/50/poligony-linii-grani-solnce.jpg">
+    </div>
+
+    <div class="Manila">
+        <img id="mnl" class="mnl-img" src="https://d1k571r5p7i4n1.cloudfront.net/911b57c3777441402b665e684246ef31/large/Cebu_Tourist_Attractions.jpg">
+        <h1>C E B U</h1>
+        <div class="intramuros">
+            <img class="intra1" src="https://sugbo.ph/wp-content/uploads/2020/11/Cebu-Taoist-Temple-1-1-1024x1024.jpg">
+            <img class="intra2" src="https://lp-cms-production.imgix.net/2019-06/2d75ea363a6f384e85a9ab0263a9f4d1-fort-san-pedro.jpg">
+            <img class="intra3" src="https://lp-cms-production.imgix.net/2019-06/6941db7cfc5a9708afb193d52005bc8d-magellan-s-cross.jpg">
+            <img class="intra4" src="https://1.bp.blogspot.com/-Nq6U8bl1LxY/YMwTed9ctSI/AAAAAAAAVd8/DOMEs3gDb4k4XCic7jULtCdIlndU57wLACLcBGAsYHQ/s2048/1623986969268.jpg">
+            <img class="intra5" src="https://www.diverbliss.com/wp-content/uploads/2020/06/Pescador-Island-Coral-Reef-Bubbles.jpg">
+            <iframe class="intra6" src="https://www.youtube.com/embed/1dFYoNej0M8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="intra-title">
+        <h1>CEBU</h1>
+        <p>It is the older city in the Philippines, the second largest metropolitant area and main gateway to other Visayas destination. Cebu popular for its cultural sites and their biggest festival <b>Sinulog Festival</b>.</p>
+    </div>
+    <div class="ilocos">
+        <img id="ilr" class="mnl-img" src="https://www.cruisemapper.com/images/ports/480-e8324d98230d.jpg">
+        <h1>B O H O L</h1>
+        <div class="intramuros">
+            <img class="intra1" src="https://cdn.britannica.com/26/155226-050-39CB355F/Tarsier.jpg">
+            <img class="intra2" src="https://www.befreetour.com/img/produk/bohol-anda-day-tour/bohol-anda-day-tour_6653641d8d3d39c4cee6b43676be854c00ef489e.jpg">
+            <img class="intra3" src="https://www.datocms-assets.com/31284/1603960412-bohol-loboc-river-cruise-jacob-maentzbohol08596802.jpg?h=720">
+            <img class="intra4" src="https://i1.wp.com/wayph.com/wp-content/uploads/2018/07/31130567465_d2979aeb5d_k.jpg?fit=2048%2C1151&ssl=1">
+            <img class="intra5" src="https://i.pinimg.com/originals/a1/67/f3/a167f35c0eaf2d947a3483a2ee8658e7.jpg">
+            <iframe class="intra6" src="https://www.youtube.com/embed/uHVGlQmgt5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="ilocos-title">
+        <h1>BOHOL</h1>
+        <p>Bohol is one of the most popular and tourist-friendly destination in the Philippines. This island province in the Central Visayas region attracts visitors from all over the world because of the most famous tourist spot. <b>Chocolate Hills</b>.</p>
+    </div>
+    <div class="pangasinan">
+        <img id="pan" class="mnl-img" src="https://wallpaperaccess.com/full/1740357.jpg">
+        <h1>I L O I L O</h1>
+        <div class="intramuros">
+            <img class="intra1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Jaro_Cathedral_%28National_Shrine_of_Our_Lady_of_Candles%29.jpg/1481px-Jaro_Cathedral_%28National_Shrine_of_Our_Lady_of_Candles%29.jpg">
+            <img class="intra2" src="https://bluprint.onemega.com/wp-content/uploads/2018/04/bluprint-architecture-heritage-house-adaptive-reuse-molo-mansion-iloilo-3.jpg">
+            <img class="intra3" src="https://images.unsplash.com/photo-1553195029-754fbd369560?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9yYWNheXxlbnwwfHwwfHw%3D&w=1000&q=80">
+            <img class="intra4" src="https://i1.wp.com/www.traveling-up.com/wp-content/uploads/2019/04/COVER-gigantes-island-drone-photo-courtesy-of-las-islas-travel-and-tours.jpg?fit=1200%2C675&ssl=1">
+            <img class="intra5" src="https://3.bp.blogspot.com/-9BgEzBHUxoI/V0cdE0Zk68I/AAAAAAAABnk/mQPDr-ICYfcBAxmhhbpFM511MDKcg3evQCLcB/s1600/Pototan%2BPlaza%2BLagoon.jpg">
+            <iframe class="intra6" src="https://www.youtube.com/embed/nQJIB4rRkNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="pgsn-title">
+        <h1>ILOILO</h1>
+        <p>Ilolo hailed as the heart of the Philippines. It is the home of historical landmarks, beaches and islands, as well as heritage homes. The provinces pictureque natural wonders and the friendly locals will make this a destination that will make you feel like a second home.</p>
+    </div>
+</body>
+</html>

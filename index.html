@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0dbbec4390.js" crossorigin="anonymous"></script>
+    <title>Lorem Ipsum</title>
+<style>
+    body {
+        margin: 0%;
+        border: 0%;
+        overflow-x: hidden;
+    }
+
+    .loremlogo{
+        width: 140px;
+    }
+
+    .nav-home, .nav-explore, .nav-travel {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        border-bottom: none;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        cursor: pointer;
+        background: none;
+        border-left: solid 1px rgb(206, 202, 202) ;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .nav-home a, .nav-explore a, .nav-travel a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .nav-home:hover, .nav-explore:hover, .nav-travel:hover{
+        border-bottom: 5px solid red;
+    }
+    
+    .nav-home {
+        border-bottom: 5px solid red;
+    }
+
+    .loremlogo, .nav-home, .nav-explore, .nav-travel {
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;
+        float: left;
+    }
+
+    .headerpic {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .drpImg {
+        width: 110px;
+        height: 110px;
+        border-image: round;
+        border-radius: 90px 90px;
+        background-color: rgb(172, 0, 0);
+        transition: width 1s, height 1s;
+        transition-timing-function: ease;
+        border: solid 4px rgb(172, 0, 0);
+    }
+
+    .drpImg:hover {
+        width: 100px;
+        height: 100px;
+        background-color:white;
+    }
+
+    .explore-content {
+        display: inline-block;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .dropdwn {
+        background-color: white;
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: 65px;
+        opacity: 0;
+        transition: height 2s ease;
+        z-index: 3;
+    }
+
+    .explore-content button:focus + .dropdwn {
+        height: auto;
+        opacity: 1;
+        z-index: 4;
+    }
+
+    .drp {
+        display: inline-block;
+        padding: 20px 20px;
+        text-align: center;
+        margin-left: 100px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        text-decoration: none;
+    }
+
+    nav {
+        border-bottom: solid 1px rgb(206, 202, 202) ;
+    }
+
+    .picture h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 3px 3px black;
+        color: white;
+        font-size: 100px;
+        margin: 90px;
+    }
+
+    .picture h2 {
+
+        color: white;
+        text-shadow: 3px 3px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 50px;
+        
+    }
+
+    .picture p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: black;
+        position: absolute;
+        top: 300px;
+        left: 150px;
+        padding: 20px;
+        background-color: yellow;
+        border-radius: 30px 30px;
+        width: 600px;
+    }
+
+    .picture i {
+        float: right;
+    }
+
+    .picture h1, .picture h2 {
+        position: absolute;
+        margin-left: 150px;
+        z-index: 2;
+    }
+
+    .history {
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        position: relative;
+    }
+
+    .philippines {
+        position: absolute;
+        z-index: inherit;
+        width: 500px;
+        top: 60px;
+        right: 0px;
+    }
+
+    .video-history {
+        position: absolute;
+        width: 900px;
+        height: 400px;
+        top: 670px;
+        border-radius: 20px 20px;
+        border: none;
+        margin-left: 50px;
+        z-index: 1;
+    }
+
+    .historyMain h1{
+        position: absolute;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+        top: 570px;
+        margin-left: 60px;
+    }
+
+    .historyMain small {
+        font-size: 15px;
+    }
+
+    .history-btn {
+        position: absolute;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 30px 30px;
+        right: 250px;
+        top: 990px;
+        background-color: rgb(236, 134, 0);
+        border: none;
+    }
+
+    .history-btn:hover {
+        background-color: rgb(207, 119, 3);
+    }
+
+    .history-btn a {
+        color:  white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+
+    .history-btn i {
+        color: white;
+    }
+
+    .top-place i {
+        color: orange;
+    }
+
+    .top-place {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+        margin-top: 50px;
+        margin-left: 60px;
+    }
+
+    .top-placebtn {
+        margin-left: 60px;
+        width: 400px;
+        height: 500px;
+        border-radius: 20px 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: height 0.3s ease-in;
+    }
+
+    .top-placebtn img {
+        width: 520px;
+        height: 500px;
+        border-radius: 20px 20px;
+        filter: brightness(70%);
+    }
+
+    .top-placebtn h1 {
+        position: absolute;
+        top: 1480px;
+        margin-left: 25px;
+    }
+
+    .top-placebtn p {
+        position: absolute;
+        top: 1520px;
+        margin-left: 25px;
+        font-size: 20px;
+    }
+    .top-placebtn p, .top-placebtn h1 {
+        color: white;
+        width: 400px;
+        text-align: justify;
+    }
+
+    .top-placebtn p, .top-placebtn h1, .top-placebtn img {
+        transition: height 0.3s ease-in;
+    }
+
+    .top-placebtn img:hover, .top-placebtn p:hover, .top-placebtn h1 {
+        height: 510px;
+    }
+
+    .top-placebtn1 {
+        margin-left: 60px;
+        width: 400px;
+        height: 500px;
+        border-radius: 20px 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: height 0.3s ease-in;
+    }
+
+    .top-placebtn1 img {
+        margin-left: 60px;
+        width: 520px;
+        height: 500px;
+        border-radius: 20px 20px;
+        filter: brightness(70%);
+    }
+
+    .top-placebtn1 h1 {
+        position: absolute;
+        top: 1480px;;
+    }
+
+    .top-placebtn1 p {
+        position: absolute;
+        top: 1520px;;
+        font-size: 20px;
+    }
+    .top-placebtn1 p, .top-placebtn1 h1 {
+        color: white;
+        width: 400px;
+        text-align: justify;
+        margin-left: 90px;
+    }
+
+    .top-placebtn1 p, .top-placebtn1 h1, .top-placebtn1 img {
+        transition: height 0.3s ease-in;
+    }
+
+    .top-placebtn1 img:hover, .top-placebtn1 p:hover, .top-placebtn1 h1 {
+        height: 510px;
+    }
+
+    .top-placebtn2 {
+        width: 400px;
+        height: 500px;
+        border-radius: 20px 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: height 0.3s ease-in;
+    }
+
+    .top-placebtn2 img {
+        margin-left: 180px;
+        width: 520px;
+        height: 500px;
+        border-radius: 20px 20px;
+        filter: brightness(70%);
+    }
+
+    .top-placebtn2 h1 {
+        position: absolute;
+        top: 1480px;
+        margin-left: 25px;
+    }
+
+    .top-placebtn2 p {
+        position: absolute;
+        top: 1520px;
+        margin-left: 25px;
+        font-size: 20px;
+    }
+    .top-placebtn2 p, .top-placebtn2 h1 {
+        color: white;
+        width: 400px;
+        text-align: justify;
+        margin-left: 200px;
+    }
+
+    .top-placebtn2 p, .top-placebtn2 h1, .top-placebtn2 img {
+        transition: height 0.3s ease-in;
+    }
+
+    .top-placebtn2 img:hover, .top-placebtn2 p:hover, .top-placebtn2 h1 {
+        height: 510px;
+    }
+
+    .btn-popular {
+        display: inline-block;
+    }
+
+    .travel {
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        position: relative; 
+    }
+
+    .travel-now h1{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 140px;
+        position: absolute;
+        top: 1600px;
+        right: 100px;
+        text-align: justify;
+        text-shadow: 1px 2px rgb(248, 217, 133);
+        color: white;
+    }
+
+    .travel-now small {
+        font-size: 60px;
+    }
+
+    .travel-btn {
+        position: absolute;
+        top: 2060px;
+        right: 350px;
+        font-size: 30px;
+        padding: 20px;
+        border-radius: 45px 30px;
+        background-color: #db2e0f;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .travel-btn a{
+        text-decoration: none;
+    }
+
+    .travel-btn a:visited {
+        color: white;
+        text-decoration: none;
+    }
+
+    .travel-btn:hover {
+        background-color: #b11c02;
+    }
+
+    .history-text {
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 40px 40px;
+        background-color: rgb(252, 211, 76);
+        width: 700px;
+        padding: 20px;
+        margin-top: 40px;
+        margin-left: 60px;
+        text-align: justify;
+    }
+
+    .history-text i {
+        font-size: 60px;
+    }
+
+    .history-text h1, .history-text i {
+        text-align: center;
+    }
+
+    .first-frame img{
+        width: 884px;
+        height: 330px;
+        object-fit: cover;
+        border-radius: 30px 30px;
+    }
+
+    .second-frame img {
+        width: 884px;
+        height: 330px;
+        object-fit: cover;
+        border-radius: 30px 30px;        
+    }
+
+    .third-frame img {
+        width: 884px;
+        height: 330px;
+        object-fit: cover;
+        border-radius: 30px 30px;
+    }
+
+   .history-text, .beside-history {
+       display: inline-block;
+    }
+
+    .first-frame button{
+        background: none;
+        border-radius: 50px 50px;
+        width: 200px;
+        background-color: white;
+    }
+    .second-frame button{
+        background: none;
+        border-radius: 50px 50px;
+        width: 200px;
+        background-color: white;
+    }
+    .third-frame button{
+        background: none;
+        border-radius: 50px 50px;
+        width: 200px;
+        background-color: white;
+    }
+
+    .first-frame button, .second-frame button, .third-frame button {
+        position: absolute;
+    }
+    
+    li {
+        list-style-type: none;
+        display: inline-block;
+    }
+</style>
+</head>
+<body> 
+    <nav>
+        <img class="loremlogo" src="image/logo.png">
+        <button class="nav-home"><a href="index.html">Home</a></button>
+        <div class="explore-content">
+            <button class="nav-explore">Explore</button>
+            <ul class="dropdwn">
+                <li><a class="drp" href="luzon.html"><img class="drpImg"  src="image/Luzon.png"><br>LUZON</a></li>
+                <li><a class="drp" href="Visayas.html"><img class="drpImg" src="image/Visayas.png"><br>VISAYAS</a></li>
+                <li><a class="drp" href="Mindanao.html"><img class="drpImg" src="image/Mindanao.png"><br>MINDANAO</a></li>
+            </ul>
+        </div>
+        <button class="nav-travel"><a href="travel.html">Travel</a></button>
+    </nav>
+    <div class="picture">
+        <h1>PHILIPPINES</h1>
+        <h2>It's More Fun In  the </h2>
+        <p>Click the Philippine Map, locate where you wanted to travel <i class="fas fa-arrow-right"></i></p>
+        <img class="headerpic" src="https://deih43ym53wif.cloudfront.net/ifugao-rice-terraces-batad-northern-luzon-philippines-shutterstock_634025597_401312cf67.jpeg">
+    </div>
+    <img class="philippines" src="image/philippines.png" usemap="#image-map">
+    <map name="image-map">
+        <area target="_blank" alt="luzon" title="luzon" href="luzon.html" coords="321,276,256,270,92,409,176,195,164,61,258,8,335,133" shape="poly">
+        <area target="_blank" alt="visayas" title="visayas" href="Visayas.html" coords="379,260,372,304,321,356,249,364,253,269,315,276,323,245,358,234" shape="poly">
+        <area target="_blank" alt="mindanao" title="mindanao" href="Mindanao.html" coords="144,458,372,309,435,410,368,460,229,494" shape="poly">
+    </map>
+    <div class="main">
+        <img class="history" src="image/history.png">
+        <div class="historyMain">
+            <h1>Philippines Story<br><small>Get to know more about Philippines history</small></h1>
+        </div>
+        <iframe class="video-history" src="https://www.youtube.com/embed/ADNgEHFDYzo" allow="accelerometer; autoplay;" allowfullscreen></iframe>
+        <button class="history-btn"><a href="#history">View more </a><i class="fas fa-arrow-circle-right"></i></button>
+
+        <h1 class="top-place"><i class="fas fa-fire"></i> Top Places in the Philippines</h1>
+        <div class="btn-popular">
+            <button class="top-placebtn">
+                <img src="https://www.easybook.com/images/destination/Philippines/Manila/RizalPark/RIP.jpg">
+                <h1>Rizal Park</h1>
+                <p>It is a historic landmark in the country. Literally reffered to as the center of the Philippines Capital.</p>
+            </button>
+
+            <button class="top-placebtn1">
+                <img src="https://a.cdn-hotels.com/gdcs/production5/d320/a0c5a994-d99a-4278-a1b1-8a3b652461ac.jpg">
+                <h1>Boracay</h1>
+                <p>Is a resord island in the Western Visayas region of the Philippines</p>
+            </button>
+
+            <button class="top-placebtn2">
+                <img src="https://cdn.shopify.com/s/files/1/0564/9747/1652/articles/nido_1920x_crop_center.png?v=1627049838">
+                <h1>El Nido</h1>
+                <p>Is a Philippines municipality on Palawan Island. It is known for white-sand beaches and coral reef.</p>
+            </button>
+        </div>
+        <div class="travel-now">
+            <img class="travel" src="image/travel-bg.png">
+            <h1><small> Explore Philippines</small><br> Travel Now.</h1>
+        </div>
+        <button class="travel-btn"><a href="travel.html">Travel</a><i class="fas fa-arrow-circle-right"></i></button>
+    </div>
+    <div class="main-history">
+        <div class="history-text" id="history">
+            <h1><i class="fas fa-monument"></i><br>History of Philippines</h1>
+            <h2>Early Philippines</h2>
+            <p>The Philippines is named later after King Philip II of Spain (1556-1598). Spanish colonized Philippines for over 300 years. Philippine archipelago has 7,000 islands. However, It is believed that during the last ice age they were joined to mainland Asia by a land bridge, enbling human beings to walk from there.</p>
+            <p>Between 3,000 BC and 2,000 BC, people learned to farm. They gre rice and domesticated animals. From the 10th AD century Filipinos traded with China. 12th Century AD Arab merchants reach Philippines and introduced Islam.</p>
+            <p>Then 1521 Ferdinand Magellan sailed across the pacific and landed in the Philippines. Magellan baptized a chiefed called Humabon and hoped to make him a ruler on behalf of the Spanish crown.</p>
+            <p>In 1565 Miguel Lopez De Legazpi led an expedition which built a fort in Cebu. Later after, In 1571 the Spaniards landed in luzon and build city of Intramuros (later called Manila), which became the capital of the Philippines. The Spanish introduced later Christianity and brought prosperity to the Philippines. </p>
+            <h2>Philippines in 19th Century</h2>
+            <p>In 1892 Jose Rizal founded the Liga Filipina, which called a reform rather than revolution. As a result, Rizal was arrested and exiled to Dapitan in Mindanao.</p>
+            <p>Then 1898 a war between United States of American and Spain. The Americants won the war and defeated the Spaniards in Manila Bay. Meanwhile, Filipino revolutionaries camaredie in Kawit Cavite and declared Philippines Independent led by Emilio Aguinaldo on June 12.</p>
+            <p>After the spain lose on the battle. The Americans took over the Philippines. The war between American forces in Manila began in February 4 1899. The war laster until 1902 when Aguinaldo was captured.</p>
+            <h2>Philippines in 20th Century</h2>
+            <p>In 1935 Manuel Quezon became the president of the Philippines. The United State American promised that the Philippines would become completely independent 1945. However, In 1941 Japan invaded the Philippines. They captured Manial on January 2, 1941. May 6, 1942 Japanese successfully took over the Philippines. </p>
+            <p>October 1944 American troops returned to the Philippines and recaptured Manila February 1945. The Philippines became independent on July 4 1946. Manuel Roxas was the first president of the newly Independent Nation.</p>
+            <p>After Manuel Roxas, Ferdinand Marcon was elected president in 1965. He was re-elected in 1969. However, the Philippines was dogged by poverty and inequality. in the 1960s the land reform program began. However, many farmers was frustrated due to the slow progress and communist insurgency in the area.</p>
+        </div>
+        <div class="beside-history">
+            <div class="first-frame">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chickenadobo-1528749020.jpg">
+            </div>
+            <div class="second-frame">
+                <img src="https://www.unileverfoodsolutions.com.ph/dam/global-ufs/mcos/SEA/calcmenu/recipes/PH-recipes/red-meats-&-red-meat-dishes/kare-kare/main-header.jpg">
+            </div>
+            <div class="third-frame">
+                <img src="https://i0.wp.com/www.angsarap.net/wp-content/uploads/2018/03/Sinuglaw.jpg?fit=1080%2C720&ssl=1">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

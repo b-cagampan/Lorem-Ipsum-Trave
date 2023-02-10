@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0dbbec4390.js" crossorigin="anonymous"></script>
+    <title>Lorem Ipsum</title>
+<style>
+    body {
+        margin: 0%;
+        border: 0%;
+        overflow-x: hidden;
+    }
+
+    .loremlogo{
+        width: 140px;
+    }
+
+    .nav-home, .nav-explore, .nav-travel {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        border-bottom: none;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        cursor: pointer;
+        background: none;
+        border-left: solid 1px rgb(206, 202, 202) ;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .nav-home a, .nav-explore a, .nav-travel a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .nav-home:hover, .nav-explore:hover, .nav-travel:hover{
+        border-bottom: 5px solid red;
+    }
+    
+    #Active {
+        border-bottom: 5px solid red;
+    }
+
+    .loremlogo, .nav-home, .nav-explore, .nav-travel {
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;
+        float: left;
+    }
+
+    .headerpic {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .drpImg {
+        width: 110px;
+        height: 110px;
+        border-image: round;
+        border-radius: 90px 90px;
+        background-color: rgb(172, 0, 0);
+        transition: width 1s, height 1s;
+        transition-timing-function: ease;
+        border: solid 4px rgb(172, 0, 0);
+    }
+
+    .drpImg:hover {
+        width: 100px;
+        height: 100px;
+        background-color:white;
+    }
+
+    .explore-content {
+        display: inline-block;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .dropdwn {
+        background-color: white;
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: 65px;
+        opacity: 0;
+        pointer-events: none;
+        transition: height 2s ease;
+        z-index: 3;
+    }
+
+    .explore-content button:focus + .dropdwn {
+        height: auto;
+        opacity: 1;
+        pointer-events: all;
+
+    }
+
+    .drp {
+        display: inline-block;
+        padding: 20px 20px;
+        text-align: center;
+        margin-left: 100px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .drp a {
+        color: black;
+        text-decoration: none;
+    }
+
+    nav {
+        border-bottom: solid 1px rgb(206, 202, 202) ;
+    }
+
+    .picture p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        width: 800px;
+        text-align: justify;
+        padding: 20px;
+        background-color: rgb(230, 230, 230);
+        border-radius: 30px 30px;
+        position: absolute;
+        top: 250px;
+        right: 100px;
+    }
+
+    .picture a {
+        position: absolute;
+        text-decoration: none;
+        color: white;
+        padding: 16px;
+        background-color: rgb(236, 159, 14);
+        border-radius: 30px 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        width: 150px;
+        top: 370px;
+        right: 100px;
+        text-align: center;
+    }
+
+    .picture a:visited {
+        color: white;
+    }
+
+    .picture a:hover {
+        background-color: yellowgreen;
+        color: black;
+    }
+
+    .main {
+        width: 1000px;
+        height: 2100px;
+        background-color: rgb(250, 204, 173);
+        border-radius: 20px 20px;
+        margin: auto;
+        border:  1px solid black;
+    }
+    .main img{
+        width: 1000px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .main form {
+        margin-top: 30px;
+        display: inline-block;
+        background-color: none;
+    }
+
+   .main form input {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 30px;
+        margin-top: 10px;
+        border: none;
+    }
+
+    .name {
+        width: 940px;
+        padding: 20px;
+        border-radius: 20px 20px;
+        border: none;
+        margin-left: 30px;
+        font-size: 30px;
+    }
+
+    .address {
+        width: 900px;
+        padding: 20px;
+        border-radius: 20px 20px;       
+    }
+
+    .month {
+        width: 400px;
+        padding: 20px;
+        border-radius: 20px 20px;
+    }
+
+
+    .credit {
+        width: 400px;
+        padding: 20px;
+        border-radius: 20px 20px;
+    }
+
+    .month-expire {
+        width: 905px;
+        padding: 20px;
+        border-radius: 20px 20px;        
+    }
+
+    .card-type {
+        display: block;
+        width: 940px;
+        padding: 20px;
+        border-radius: 20px 20px;
+        margin-left: 30px;
+        border: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+    }
+
+    .card-type label {
+        margin-top: 10px;
+    }
+    .table-survey form {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 21px;
+        padding: 20px;
+        width: 500px;
+        text-align: justify;
+        background-color: rgb(240, 239, 239);
+        border-radius: 20px 20px;
+        margin-left: 20px;
+    }
+
+    .table-survey p {
+        padding: 20px;
+        width: 300px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 21px;
+        text-align: justify;
+        background-color: rgb(240, 239, 239);
+        border-radius: 20px 20px;
+        margin-left: 20px;
+        position: relative;
+        top: -175px;
+    }
+
+    .table-survey p, .table-survey label {
+        display: inline-block;
+    }
+
+    .table-survey {
+        background-color: white;
+        width: 942px;
+        margin-top: 20px;
+        margin-left: 28px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .table-survey1 form {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 21px;
+        padding: 20px;
+        width: 500px;
+        height: 96px;
+        text-align: justify;
+        background-color: rgb(233, 236, 34);
+        border-radius: 20px 20px;
+        margin-left: 20px;
+        position: relative;
+        top: -90px;
+    }
+
+    .table-survey1 p {
+        padding: 20px;
+        width: 300px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 21px;
+        text-align: justify;
+        background-color: rgb(233, 236, 34);;
+        border-radius: 20px 20px;
+        margin-left: 20px;
+        position: relative;
+        top: -1px;
+    }
+
+    .table-survey1 p, .table-survey1 label {
+        display: inline-block;
+    }
+
+    .table-survey1 {
+        background-color: white;
+        width: 942px;
+        margin-left: 28px;
+    }
+
+    .table-survey2 form {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 21px;
+        padding: 20px;
+        padding-top: 13px;
+        width: 500px;
+        text-align: justify;
+        background-color: rgb(233, 236, 34);
+        border-radius: 20px 20px;
+        margin-left: 20px;
+        position: relative;
+        top: -1px;
+    }
+
+    .table-survey2 p {
+        padding: 20px;
+        width: 300px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 21px;
+        text-align: justify;
+        background-color: rgb(233, 236, 34);;
+        border-radius: 20px 20px;
+        margin-left: 20px;
+        position: relative;
+        top: -1px;
+    }
+
+    .table-survey2 p, .table-survey2 label {
+        display: inline-block;
+    }
+
+    .table-survey2 {
+        background-color: white;
+        width: 942px;
+        margin-left: 28px;
+    }
+
+    .table-survey3 form {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 21px;
+        padding: 20px;
+        padding-top: 13px;
+        width: 500px;
+        text-align: justify;
+        background-color: rgb(233, 236, 34);
+        border-radius: 20px 20px;
+        margin-left: 20px;
+        position: relative;
+        top: 34px;
+    }
+
+    .table-survey3 p {
+        padding: 20px;
+        width: 300px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 21px;
+        text-align: justify;
+        background-color: rgb(233, 236, 34);;
+        border-radius: 20px 20px;
+        margin-left: 20px;
+        position: relative;
+        top: -1px;
+    }
+
+    .table-survey3 p, .table-survey3 label {
+        display: inline-block;
+    }
+
+    .table-survey3 {
+        background-color: white;
+        width: 942px;
+        height: 600px;
+        margin-left: 28px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .details {
+        position: relative;
+        text-decoration: none;
+        color: white;
+        padding: 16px;
+        background-color: rgb(236, 159, 14);
+        border-radius: 20px 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        width: 150px;
+        top: -177px;
+        left: 708px;
+        text-align: center;
+    }
+
+    .details:hover {
+        background-color: yellowgreen;
+        color: black;
+    }
+
+    .details:visited{
+        color: white;
+    }
+
+    .deats {
+        width: 1000px;
+        height: 950px;
+        background-color: rgb(250, 204, 173);
+        border-radius: 20px 20px;
+        margin: auto;
+        position: relative;
+        top: 900px;
+        border:  1px solid black;
+    }
+
+    .table-survey3 img {
+        width: 600px;
+        object-fit: cover;
+        border-radius: 20px 20px;
+        position: relative;
+        top: 20px;
+        left: 200px;
+    }
+
+    .sign-parag p {
+        font-family: Arial;
+        width: 400px;
+        height: 140px;
+        font-size: 15px;
+        position: relative;
+        top: -255px;
+        left: 298px;
+        padding: 20px;
+        padding-top: 10px;
+    }
+
+    .sign-parag form {
+        background-color: green;
+        color: white;
+        padding: 5px;
+        width: 150px;
+        position: relative;
+        top: -200px;
+        right: 80px;
+    }
+
+    .deats label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        margin-left: 30px;
+    }
+
+    .deats a {
+        position: absolute;
+        text-decoration: none;
+        color: white;
+        padding: 16px;
+        background-color: rgb(236, 159, 14);
+        border-radius: 30px 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        width: 150px;
+        top: 850px;
+        right: 100px;
+        text-align: center;
+    }
+
+    .deats a:hover{
+        background-color: yellowgreen;
+    }
+
+</style>
+</head>
+<body> 
+    <nav>
+        <img class="loremlogo" src="image/logo.png">
+        <button class="nav-home"><a href="index.html">Home</a></button>
+        <div class="explore-content">
+            <button class="nav-explore"><a href="index.html">Explore</a></button>
+            <ul class="dropdwn">
+                <li class="drp"><a href="luzon.html">
+                    <img class="drpImg" src="/image/Luzon.png">
+                    <br> LUZON 
+                </a></li>
+                <li class="drp"><a href="Visayas.html">
+                    <img class="drpImg" src="/image/Visayas.png">
+                    <br> VISAYAS 
+                </a></li>
+                <li class="drp"><a href="Mindanao.html">
+                    <img class="drpImg" src="/image/Mindanao.png">
+                    <br> MINDANAO 
+                </a></li>
+            </ul>
+        </div>
+        <button id="Active" class="nav-travel"><a href="#home">Travel</a></button>
+    </nav>
+    <div class="picture">
+        <img class="headerpic" src="image/advisory.png">
+        <p>To ensure the safety of each of everyone. Due to amid pandemic, COVID-19. All travelers should fill up their personal details for a safe tracing of each of everyone. We ensure your personal data will be kept and not shared to the public. Your personal data will be used only for contact tracing only. <br><b>TAKE NOTE:</b> Giving a falsify information will fine a consequences.</p>
+        <a href="#health-dec">Proceed <i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+    <div class="main">
+        <img src="https://i.pinimg.com/originals/8c/6e/dd/8c6edd7216d7aa841e0537f9a1dc3787.png">
+        <form id="health-dec" >
+            <input class="name" type="text" placeholder="Full Name" required>
+            <input class ="address" type="text" placeholder="Enter your Current Address" required>
+            <input class ="email-add" type="text" placeholder="Email Address">
+            <input class ="celno" type="number" placeholder="Contact Number" required>
+            <input class ="month" type="text" placeholder="Date Today: MM/DD/YY" onfocus="(this.type='date')"required>
+            <input class ="time" type="time" placeholder="Time" required>
+        </form>
+
+        <div class="table-survey">
+            <p>Kindly check the box if you are experiencing or did you have any of the following in the last 14 days</p>
+            <form>
+                <input type="checkbox" name="fever" value="fever">
+                <label for="fever">Fever</label><br>
+                <input type="checkbox" name="cough" value="cough">
+                <label for="cough">Cough or Colds</label><br>
+                <input type="checkbox" name="body-pain" value="body-pain">
+                <label for="body-pain">Body Pain</label><br>
+                <input type="checkbox" name="sore-throat" value="sore-throat">
+                <label for="sore-throat">Sore Throat</label><br>
+                <input type="checkbox" name="" value="">
+                <label for="fatigue">fatigue</label><br>
+                <input type="checkbox" name="fatigue" value="fatigue">
+                <label for="headache">Headache</label><br>
+                <input type="checkbox" name="headache" value="headache">
+                <label for="headache">headache</label><br>
+                <input type="checkbox" name="diarrhea" value="diarrhea">
+                <label for="diarrhea">Diarrhea</label><br>
+                <input type="checkbox" name="loss-taste" value="loss-taste">
+                <label for="loss-taste">Lost of Taste</label><br>
+                <input type="checkbox" name="DoB" value="DoB">
+                <label for="DoB">Difficult of Breathing</label><br>
+            </form>
+        </div>
+        <div class="table-survey1">
+            <p>Have you provided direct care for a patient with probable or confirmed COVID-19 case
+                without using proper "Personal Protective Equipment (PPE)" for the past 14 days? </p>
+            <form>
+                <input type="checkbox" name="yes" value="yes">
+                <label for="yes">yes</label><br>
+                <input type="checkbox" name="no" value="no">
+                <label for="no">no</label><br>
+            </form>
+        </div>
+        <div class="table-survey2">
+            <p>Have you traveled outside the Philippines in the last 14 days?</p>
+            <form>
+                <input type="checkbox" name="yes" value="yes">
+                <label for="yes">yes</label><br>
+                <input type="checkbox" name="no" value="no">
+                <label for="no">no</label><br>
+            </form>
+        </div>
+        <div class="table-survey3">
+            <p> Have you traveled outside the current city/municipality where you reside?</p>
+            <form>
+                <input type="checkbox" name="yes" value="yes">
+                <label for="yes">yes</label><br>
+                <input type="checkbox" name="no" value="no">
+                <label for="no">no</label><br>
+                <label for="others">If yes, specify which city/municipality</label>
+                <input placeholder="Enter municipality" type="text" name="others">
+            </form>
+
+            <img src="image/sign.png">
+            <div class="sign-parag">
+                <p>I hereby certify that the information given is true, correct and complete. I understand that failure to
+                    answer any question or any falsified response may have serious consequences. I understand that my
+                    personal information is protected by RA 10173 or the Data Privacy Act of 2012 and that this form will be
+                    destroyed after 20 days from the date of accomplishment, following the National Archives of the
+                    Philippines protocol. <b>By checking agree you understand the agreement.</b></p>
+                <form>
+                    <input type="checkbox" name="no" value="no" required>
+                    <label for="agree">I Agree</label>
+                </form>
+            </div>
+            <a class="details" href="#details">Proceed to the Next <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+        <div class="deats">
+            <img src="https://i.pinimg.com/originals/8c/6e/dd/8c6edd7216d7aa841e0537f9a1dc3787.png">
+            <form id="details">
+                <label for="destination">Destination</label><br>
+                <select class="name" name="destination">
+                    <option value="select">select</option>
+                    <option value="Intramuros">Intramuros</option>
+                    <option value="Ilocos-Region">Ilocos-Region</option>
+                    <option value="Pangasinan">Pangasinan</option>
+                    <option value="Cebu">Cebu</option>
+                    <option value="Bohol">Bohol</option>
+                    <option value="Iloilo">Iloilo</option>
+                    <option value="CDO">Cagayan De Oro</option>
+                    <option value="Davao">Davao</option>
+                    <option value="MO">Misamis Oriental</option>
+                </select>
+                <input class ="month" type="text" placeholder="Check-In: MM/DD/YY" onfocus="(this.type='date')"required>
+                <input class ="month" type="text" placeholder="Check-Out: MM/DD/YY" onfocus="(this.type='date')"required>
+                <label for="card-type">Card Type</label>
+                <select class="card-type" name="card-type">
+                    <option value="select">select</option>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                </select>
+                <input class ="credit" type="text" placeholder="Enter your Credit Number" required>
+                <input class ="credit" type="text" placeholder="Enter your CVC" required>
+                <input class ="month-expire" type="text" placeholder="Expiration: MM/YY" onfocus="(this.type='month')"required>
+            </form>
+            <a class="submit" href="index.html">submit</a>
+        </div>
+    </div>
+</body>
+</html>
